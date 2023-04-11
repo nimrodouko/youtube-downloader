@@ -1,0 +1,24 @@
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT DownLoader</title>
+</head>
+<body>
+    <h1>YouTube Downloader</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="video_url" placeholder="Enter your Link">
+        <button type="submit">Download</button>
+    </form>
+    <a href="{% url 'convert' %}">Convert to  audio</a>
+
+    
+</body>
+</html>
+
+{% endblock content %}
