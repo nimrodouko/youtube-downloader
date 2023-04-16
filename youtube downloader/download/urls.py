@@ -6,6 +6,7 @@ from django.urls import path
 from . import views
 
 urlpatterns =[
-    path('',views.get_highest_resolution,name='home'),
-    path('convert/', views.converter,name='convert')
+    path('',views.chemistry,name='chemistry'),
+    path('youtube/',views.download_video,name='home'),
+    # path('convert/', views.converter,name='convert')
 ]

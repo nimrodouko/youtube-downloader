@@ -12,6 +12,7 @@
     <h1>YouTube Downloader</h1>
     <form method="POST">
         {% csrf_token %}
+        <label for="link">Enter your link:</label>
         <input type="text" name="video_url" placeholder="Enter your Link">
         <button type="submit">Download</button>
     </form>

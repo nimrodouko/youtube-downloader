@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet"  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    {% block content%}
 	<title>Chemical Element Information</title>
 </head>
 <body>
 	<h1>Chemical Element Information</h1>
-
-	<label for="atomic_number">Enter Atomic Number:</label>
-	<input type="number" id="atomic_number" name="atomic_number" min="1" max="118">
+    <form method="post">
+        {% csrf_token %}
+        <label for="body">Enter Atomic Number:</label>
+	<input type="number" name="atomic_number" min="1" max="118">
+    <button type="submit"> Submit</button>
 	<br><br>
 
+    </form>
+
+	
+{% if element %}
 	<label for="element_number">Element Number:</label>
-	<span id="element_number"></span>
+	<p>{{element.number}}</p>
 	<br><br>
 
 	<label for="element_symbol">Element Symbol:</label>
-	<span id="element_symbol"></span>
+	<p>{{element.symbol}}</p>
 	<br><br>
 
 	<label for="element_name">Element Name:</label>
-	<span id="element_name"></span>
+	<p>{{element.name}}</p>
 	<br><br>
 
 	<label for="element_mass">Element Mass:</label>
-	<span id="element_mass"></span>
+    <p>{{element.mass}}</p>
 	<br><br>
 
 	<label for="element_density">Element Density:</label>
-	<span id="element_density"></span>
+	<p>{{element.density}}</p>
 	<br><br>
-
-
+{% endif %}
+{% endblock content %}
 </body>
 </html>
